@@ -1,6 +1,8 @@
-<p align="center">
-  <img src="https://github.com/jthom2/email-chat/assets/134821369/064bf5d9-9307-4f6f-9e44-b0cb2b82df59" alt="EMAIL_CHATBOT" style="padding: 200px;"/>
-</p>
+<table>
+  <tr>
+    <td style="padding: 10px;"><img src="https://github.com/jthom2/email-chat/assets/134821369/064bf5d9-9307-4f6f-9e44-b0cb2b82df59" alt="EMAIL_CHATBOT"/></td>
+  </tr>
+</table>
 
 
 # Python Language Model with Gmail Integration
