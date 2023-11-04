@@ -1,4 +1,7 @@
-![EMAIL_CHATBOT](https://github.com/jthom2/email-chat/assets/134821369/064bf5d9-9307-4f6f-9e44-b0cb2b82df59)
+<p align="center">
+  <img src="https://github.com/jthom2/email-chat/assets/134821369/064bf5d9-9307-4f6f-9e44-b0cb2b82df59" alt="EMAIL_CHATBOT" style="padding: 10px;"/>
+</p>
+
 
 # Python Language Model with Gmail Integration
 
