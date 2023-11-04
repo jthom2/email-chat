@@ -1,7 +1,7 @@
 ![EMAIL_CHATBOT-modified](https://github.com/jthom2/email-chat/assets/134821369/d4431db6-63bd-40c0-a68e-8b2f80ba9282)
 
 
-# Python Language Model with Gmail Integration
+# Langchain Chatbot with Gmail Integration
 
 ## Description
 
@@ -27,7 +27,7 @@ This is a Python web application that integrates with Gmail to perform actions s
 1. Clone the repository:
 2. Navigate to the project directory:
 3. Install the required dependencies:
-4. Set up your environment variables for the OpenAI API key and SERP API key. These can be set in a `.env` file at the root of the project or exported as environment variables in your shell.
+4. Set up your environment variables for the OpenAI API key. These can be set in a `.env` file at the root of the project or exported as environment variables in your shell.
 
 ### Google API Credentials
 
