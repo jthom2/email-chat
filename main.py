@@ -1,4 +1,3 @@
-
 from langchain.llms import OpenAI
 from langchain.agents.agent_toolkits import GmailToolkit
 from langchain.chat_models import ChatOpenAI
@@ -24,8 +23,7 @@ import time
 import logging
 import requests
 
-os.environ["OPENAI_API_KEY"] = config('OPENAI_API_KEY')
-os.environ["SERPAPI_API_KEY"] = config('SERPAPI_API_KEY')
+os.environ["OPENAI_API_KEY"] = config("OPENAI_API_KEY")
 
 SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"]
 
@@ -38,7 +36,7 @@ creds = None
 
 if os.path.exists("email_token.json"):
     creds = Credentials.from_authorized_user_file("email_token.json", SCOPES)
-    
+
 if not creds or not creds.valid:
     if creds and creds.expired and creds.refresh_token:
         creds.refresh(Request())
@@ -56,15 +54,10 @@ loader = GMailLoader(creds=creds, n=3)
 data = loader.load()
 len(data)
 
-training_data = list(
-    map_ai_messages(data, sender="me")
-)
-
+training_data = list(map_ai_messages(data, sender="me"))
 
 
 tools = GmailToolkit.get_tools(self=gmail)
-
-
 
 
 agent = initialize_agent(
