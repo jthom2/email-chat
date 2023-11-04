@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Frontend</title>
+</head>
+<body>
+    <h1>API Interaction Interface</h1>
+    <form id="prompt-form">
+        <label for="prompt">Enter your prompt:</label><br>
+        <textarea id="prompt" name="prompt" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Generate">
+    </form>
+    <h2>Response:</h2>
+    <pre id="response"></pre>
+
+    <script>
+        document.getElementById('prompt-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const promptValue = document.getElementById('prompt').value;
+            const responseElement = document.getElementById('response');
+            
+            // Set the response element to "Loading..." before the request
+            responseElement.textContent = "Loading...";
+            
+            // This is where we'll add our API request
+            fetch('http://localhost:8000/generate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ prompt: promptValue }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Directly set the text content to the 'response' key's value
+                responseElement.textContent = data.response;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                responseElement.textContent = "Error: Could not retrieve data";
+            });
+        });
+    </script>       
+</body>
+</html>
