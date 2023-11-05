@@ -5,7 +5,7 @@
 
 ## Description
 
-This is a Python web application that integrates with Gmail to perform actions such as creating email drafts and sending emails. It uses OpenAI's language models, probably for generating email content or other text-based operations. The application includes a simple front-end interface that allows users to interact with the API.
+This is a Python web application that integrates with Gmail to perform actions such as creating email drafts and sending emails. It uses OpenAI's language models for generating email content or other text-based operations. The application includes a simple front-end interface that allows users to interact with the API.
 
 ## Features
 
