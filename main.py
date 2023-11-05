@@ -27,7 +27,7 @@ os.environ["OPENAI_API_KEY"] = config("OPENAI_API_KEY")
 
 SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"]
 
-llm = ChatOpenAI(temperature=0.3, model="gpt-3.5-turbo-16k", max_retries=1)
+llm = ChatOpenAI(temperature=0.9, model="gpt-3.5-turbo-16k", max_retries=1)
 gmail = GmailToolkit()
 
 chain = load_qa_chain(llm, chain_type="map_reduce")
@@ -85,11 +85,17 @@ app.add_middleware(
 
 @app.post("/generate")
 async def generate(prompt: GenerateInput):
+    encoded_prompt = prompt.prompt
     refined_prompt = f"""
     You are using my Gmail account: 
-    prompt: {prompt.prompt}
-    if applicable:
+    prompt: {encoded_prompt}
+    if create_gmail_draft:
         recipient: any
-        subject: infer from prompt"""
+        subject: any
+        body: infer from prompt
+    if search_gmail:
+        in:inbox
+        query: body: any from: any to: any
+        """
     response = agent.run(refined_prompt)
     return {"response": response}
