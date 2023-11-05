@@ -85,10 +85,9 @@ app.add_middleware(
 
 @app.post("/generate")
 async def generate(prompt: GenerateInput):
-    encoded_prompt = prompt.prompt
     refined_prompt = f"""
     You are using my Gmail account: 
-    prompt: {encoded_prompt}
+    prompt: {prompt.prompt}
     if create_gmail_draft:
         recipient: any
         subject: any
